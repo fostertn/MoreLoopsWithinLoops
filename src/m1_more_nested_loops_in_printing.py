@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and tyler foster.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -38,6 +38,12 @@ def run_test_triangle_right_justified():
 
 
 def triangle_right_justified(r):
+    for k in range(r):
+        for j in range(r - k - 1):
+            print(' ', end='')
+        for i in range(k + 1):
+            print(i + 1, end='')
+        print()
     """
     Prints a triangle of numbers, with r rows.
     It looks the same as a previous example, but right-justified.
@@ -55,7 +61,7 @@ def triangle_right_justified(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DOONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -96,6 +102,12 @@ def run_test_triangle_upside_down():
 
 
 def triangle_upside_down(r):
+    for k in range(r):
+        for j in range(k):
+            print(' ', end='')
+        for i in range(r - k):
+            print(i + 1, end='')
+        print()
     """
     Prints a triangle of numbers, with r rows.
     It looks the same as the previous problem,
@@ -109,7 +121,7 @@ def triangle_upside_down(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -140,6 +152,15 @@ def run_test_vee():
 
 
 def vee(r):
+    for k in range(r):
+        for j in range(k):
+            print('', end='')
+        for i in range(r - k):
+            print(i + 1, end='')
+        print('-', end='')
+        for h in range(r - k):
+            print(h + 1, end='')
+        print()
     """
     Prints a "V" of numbers, with r rows.
     It looks like this example, when r = 5:
@@ -160,7 +181,7 @@ def vee(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -191,6 +212,12 @@ def run_test_numbers_constant_forward():
 
 
 def numbers_constant_forward(r, maxnum, n):
+    for k in range(r):
+        for j in range(maxnum):
+            for i in range(n):
+                print(j + 1, end='')
+            print('', end='')
+        print()
     """
     Prints a rectangle of numbers, with r rows.
     Each row has n 1s, then a space, then n 2s,
@@ -216,7 +243,7 @@ def numbers_constant_forward(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -249,6 +276,12 @@ def run_test_numbers_constant_backwards():
 
 
 def numbers_constant_backwards(r, maxnum, n):
+    for k in range(r):
+        for j in range(maxnum):
+            for i in range(n):
+                print(maxnum - j, end='')
+            print('', end='')
+        print()
     """
     Prints a rectangle of numbers, with r rows.
     It looks the same as the previous problem, but with
@@ -294,6 +327,12 @@ def run_test_numbers_increasing_forward():
 
 
 def numbers_increasing_forward(r, maxnum):
+    for k in range(r):
+        for i in range(maxnum):
+            for i in range(i + 1):
+                print(i + 1, end='')
+            print('', end='')
+            print()
     """
     Prints a rectangle of numbers, with r rows, as in the previous
     two problems.  But now each row has one 1, two 2s, three 3s,
