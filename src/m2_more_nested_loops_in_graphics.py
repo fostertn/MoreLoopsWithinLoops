@@ -29,6 +29,31 @@ def run_test_draw_upside_down_wall():
 
 
 def draw_upside_down_wall(rectangle, n, window):
+    original_x1 = rectangle.corner_1.x
+    original_y1 = rectangle.corner_1.y
+    original_x2 = rectangle.corner_2.x
+    original_y2 = rectangle.corner_2.y
+    width = rectangle.get_width()
+    height = rectangle.get_height()
+
+    x1 = original_x1
+    y1 = original_y1
+    x2 = original_x2
+    y2 = original_y2
+
+    for k in range(n):
+        for j in range(k + 1):
+            new_rect = rg.Rectangle(rg.Point(x1, y1), rg.Point(x2, y2))
+            new_rect.attach_to(window)
+            window.render(0.1)
+
+            x1 = x1 + width
+            x2 = x2 + width
+        x1 = original_x1 - (k + 1) * 0.5 * width
+        x2 = original_x2 - (k + 1) * 0.5 * width
+        y1 = y1 - height
+        y2 = y2 - height
+
     """
     See   MoreWalls.pdf   in this project for pictures that may
     help you better understand the following specification:
